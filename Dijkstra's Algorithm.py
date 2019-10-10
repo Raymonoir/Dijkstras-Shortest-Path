@@ -71,7 +71,7 @@ class Graph:
                    
         D1 = Dijkstra(self.edgeList,self.nodeList,self.nodeList[startNodeIndex],self.nodeList[endNodeIndex])
         D1.startAlgorithm()
-        print(D1.endNode.distanceFromStart)
+        print("Shortest Distance from node" , startNodeIndex , "to" , endNodeIndex , "is" , D1.endNode.distanceFromStart)
         
 
 class Edge:
@@ -82,6 +82,7 @@ class Edge:
         self.nodeList.append(node1)
         self.nodeList.append(node2)
 
+    #Retuns the node on the other end of an edge
     def getConnectingNode(self, givenNode):
         for node in self.nodeList:
             if givenNode == node:
@@ -143,9 +144,10 @@ class Dijkstra:
                     shortestDistanceSoFar = self.unvisitedNodes[i].distanceFromStart
                     closestNodeSoFar = self.unvisitedNodes[i]
 
+            #Setting current node to the node with the shortest distance from start so far within unvisited nodes list
             currentNode = closestNodeSoFar
 
-            
+            #remove this new current node
             self.unvisitedNodes.remove(currentNode)
 
 
