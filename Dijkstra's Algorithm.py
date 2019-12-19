@@ -151,7 +151,8 @@ class Dijkstra:
             self.unvisitedNodes.remove(currentNode)
 
 
-G1 = Graph(graphList2)
+if (__name__ == "__main__"):
+    G1 = Graph(graphList2)
     
 
 
